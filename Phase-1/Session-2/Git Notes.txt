@@ -18,3 +18,13 @@ Step:4 create the snapshot of the file
 Step:5 check the logs of commits 
 	> git log               //full logs of all the files within thefolder
 	> git log --oneline     //short logs in one line only
+Step:6 check the difference in the files
+	> git diff <file1ID> <file2ID>    //this id u can get it from  git  log --oneline
+Step:7 to set glabal username
+	> git config --global --list        //this will give you the list of global user
+Step:8 create branch locally in git
+	> git branch <name of branch>
+step:9 move to newly created branch
+	> git checkout <name of the branch>
+step:10 when you move to the next branch all files and folders will be copied automatically ,now both branches works independently
+ 
