@@ -109,7 +109,7 @@ INSERT SOME RECORDS
 	
  Sub Queries
 	> select s.name from student s
-	> select c.course_name from courses s;
+	> select c.course_name from courses c;
 	> select * from students s join courses c on c.course_id=s.student_id;
 
 
