@@ -1,0 +1,92 @@
+***************************************************************************************************************
+MYSQL Queries
+***************************************************************************************************************
+1. get the list of all databases
+> show databases;
+
+2. Create Database
+> create database <name_of_your_database>;
+> eg: create database simplilearn
+
+3. use the newly created database
+> use <name_of_your_database>; 
+eg: use simplilearn
+
+4. create Table in Database
+> create table eproduct(id bigint primary key auto_increment,name varchar(100),price decimal(10,2),date_added timestamp default now());
+
+5. get all the tables in the database
+> show tables;
+
+6. get the description of the table
+> describe table_name;
+eg: describe eproduct;
+
+7. Insert record in Database;
+	>insert into eproduct (name,price) value("Apple","80000");
+	>insert into eproduct (name,price) value("Lenovo","120000");
+	>insert into eproduct (name,price) value("Acer Laptop","75000");
+	>insert into eproduct (name,price) value("VIO Laptop","69000");
+	>insert into eproduct (name,price) value("Samsung","34000");
+
+8. retrive all products
+	> select * from eproduct;
+
+9. retrive the product by some filer
+	> select * from eproduct where id=2;
+	> select * from eproduct where name="Apple";
+10. Update Record	
+	> update eproduct set name="Apple Mac Book Air" where id=1;
+	> update eproduct set  name="Samsung Galaxy Ultra" where id=5;
+
+
+11. Delete Entries in The Table
+	> delete from eproduct where id=5;
+	> delete from eproduct where name="Vivo Laptop";
+
+12. Delete Entire Table
+	> drop table eproduct;
+
+
+13 Inserting Multiple Records;
+
+	> insert into eproduct(name,price) value("Apple Inc",180000),("Android",100000),("Linux",150000);
+
+14 filter by query
+	> select * from eproduct order by date_added ASC;
+	> select * from eproduct order by date_added DESC;
+	> select * from eproduct order by id ASC;
+	> select * from eproduct order by id DESC;
+
+***************************************************************************************************************
+CREATE ANOTHER TABLE
+***************************************************************************************************************
+Create the table with name say Students
+
+
+	> create table students(id bigint primary key auto_increment,name varchar(100), age int, grade decimal(10,2),major varchar(50));
+
+let's insert records in the table
+	> insert into students(name,age,grade,major) values('Alice',20,3.5,'Physics'),('Bob',22,3.7,'Chemistry'),('Charlie',22,3.2,'Mathematics'),('Diana',22,3.8,'Mathematics');
+
+filer using ORDER BY
+	> select * from students ORDER BY grade DESC;
+	> select * from students ORDER BY grade ASC;
+
+15 DISTINCT Query
+	> SELECT DISTINCT major from students;
+16 use of COUNT in MYSQL(It will Return the no.of  entries in the Table	)
+	> select major, COUNT(*) from students GROUP BY major
+
+
+
+
+
+
+
+
+
+
+
+
+
