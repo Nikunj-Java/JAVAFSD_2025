@@ -90,6 +90,34 @@ filer using ORDER BY
 	D. update accounts set balance= balance-200 where name='Nikunj Soni';
 	E. update accounts set balance= balance+200 where name='Suhas inamdar';
 	F. commit;
+	
+	G. Create Save Point for ROllback the Transaction
+		> START TRANSACTION;
+		> SAVEPOINT sp1;
+		> update accounts set balance=balance-50.00 where name='Nikunj Soni';
+		> rollback  to sp1;
+
+18. working with subQueries in Database;
+
+	> create table courses(course_id int auto_increment primary key,course_name varchar(100), instructor varchar(100));
+	> create table students(student_id int auto_increment primary key,name varchar(100),major varchar(100));
+	 
+
+INSERT SOME RECORDS
+	> insert into student(name,major) values('Jhon','Mathematics'),('BOB','Computer Science');
+	> insert into courses(course_name,instructor) values('Database System','Nikunj Soni'),('Calculus','Dr. Jones');
+	
+ Sub Queries
+	> select s.name from student s
+	> select c.course_name from courses s;
+	> select * from students s join courses c on c.course_id=s.student_id;
+
+
+
+
+
+
+
 
 
 
