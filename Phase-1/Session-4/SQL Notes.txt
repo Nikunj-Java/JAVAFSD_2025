@@ -78,8 +78,18 @@ filer using ORDER BY
 16 use of COUNT in MYSQL(It will Return the no.of  entries in the Table	)
 	> select major, COUNT(*) from students GROUP BY major
 
+17 TCL Commands (TRANSACTIONA CONTROL COMMANDS) are used to manage database transaction and ensures data integrity, these commands allows you to commit , rollback and control transaction point
 
+	A. let's understand with the help of below table
+		> create table accounts(id int auto_increment primary key, name varchar(50), balance decimal(10,2));
+	B. insert records
+		> INSERT INTO accounts (name,balance) values ('Nikunj Soni',1000.00),('Suhas inamdar',500.00);
 
+	C. STRAT TRANSACTION
+		> START TRANSACTION;
+	D. update accounts set balance= balance-200 where name='Nikunj Soni';
+	E. update accounts set balance= balance+200 where name='Suhas inamdar';
+	F. commit;
 
 
 
