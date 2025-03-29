@@ -112,11 +112,62 @@ INSERT SOME RECORDS
 	> select c.course_name from courses c;
 	> select * from students s join courses c on c.course_id=s.student_id;
 
+19.RelationShip in the databse
+	> create table customers(CustomerId int auto_increment primary key, Name varchar(100),Email varchar(100),Phone varchar(15));
+	> create table Orders(OrderId int auto_increment primary key,OrderDate Date,CustomerId int,Amount decimal(10,2), FOREIGN KEY(CustomerId) REFERENCES Customers(CustomerId));
+
+	Insert data:
+	-------------
+	> insert into Customers(Name,Email,Phone) values ('Alice','alice@gmail.com','9876543210'),('Jhon','jhon@gmail.com','9988776655');
+	>insert into Orders(OrderDate,CustomerId,Amount) values('2025-03-29',1,250.00),('2025-03-28',2,350.00);
+
+	RESULT:
+	------------
+	> SELECT <CONDITIONS> FROM table_1 JOIN table_2 ON TABLE1_COL=TABLE2_COL
+	> SELECT Customers.Name,Customers.Email,Orders.OrderId,Orders.OrderDate,Orders.Amount FROM Customers JOIN Orders ON Customers.CustomerId= Orders.CustomerId;
+	> SELECT c.Name,c.Email,o.OrderId,o.OrderDate,o.Amount FROM Customers c JOIN Orders o ON c.CustomerId=o.CustomerId
+
+20. TYPES OF JOIN
+-----------------------------	
+1.INNER JOIN--> MATCHES ONLY EXISTING RELATIONSHIPS(no unmatched rows)
+2.LEFT JOIN-->
+3.RIGHT JOIN-->
+4.FULL ORDER JOIN--> my sql doesnt alow  full join but can be done using UNION
+5.CROSS JOIN--->Generate  all possible combination
 
 
 
+1. INNER JOIN
+-------------------
+	> SELECT c.CustomerId,c.Name,o.OrderId,o.OrderDate,o.Amount FROM Customers  c INNER JOIN Orders o ON c.CustomerId=o.CustomerId;
 
+2. LEFT JOIN
+-------------------
+	>SELECT c.CustomerId,c.Name,o.OrderId,o.OrderDate,o.Amount FROM Customers  c LEFT JOIN Orders o ON c.CustomerId=o.CustomerId;
 
+3. RIGHT JOIN
+-------------------
+	> SELECT c.CustomerId,c.Name,o.OrderId,o.OrderDate,o.Amount FROM Customers  c RIGHT JOIN Orders o ON c.CustomerId=o.CustomerId;
+
+4. FULL OUTER JOIN
+-------------------
+	> SELECT c.CustomerId,c.Name,o.OrderId,o.OrderDate,o.Amount FROM Customers  c LEFT JOIN Orders o ON c.CustomerId=o.CustomerId UNION SELECT c.CustomerId,c.Name,o.OrderId,o.OrderDate,o.Amount FROM Customers  c RIGHT JOIN Orders o ON c.CustomerId=o.CustomerId;
+
+5. CROSS JOIN
+-------------------
+	>SELECT c.CustomerId,c.Name,o.OrderId,o.OrderDate,o.Amount FROM Customers  c CROSS JOIN Orders o;
+
+20. INBUILT- Functions
+----------------------------
+	1. SUM
+		> select sum(Amount) from orders;
+	2. UPPERSS
+		> select UPPER(Name) from customers;
+	3. AS
+		> select OrderDate, YEAR(OrderDate) AS Order_Year from orders;
+	4. LIKE
+		> select * from Customers WHERE Name LIKE 'Nik%'
+			output: NIKE, NIKON,NIKUNJ
 
 
 
