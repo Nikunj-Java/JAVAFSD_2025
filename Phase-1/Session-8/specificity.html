@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*1. smallest Priority to tag*/
+        h1{
+            color: red;
+        }
+
+        /*2. Low Priority to class*/
+        .blue{
+            color: blue;
+        }
+        /*3. High Priority to id*/
+        #green{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <h1> Heading 1</h1>
+    <!--class-->
+    <h1 class="blue">Heading2</h1>
+    <!--class and id Both-->
+    <h1 class="blue" id="green">Heading 3</h1>
+
+    <h1 class="blue" id="green" style="color:violet;">Heading 4</h1>
+
+
+    
+</body>
+</html>
