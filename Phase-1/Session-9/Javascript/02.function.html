@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        //01. simple function
+        function display(){
+            //your code
+            console.log("Display Function Called");
+            document.write("Display Function Called")
+
+        }//scope of function
+
+        display(); // calling a function
+
+
+        //02. parametrised function
+        function add(a,b){
+            var num1=a;
+            var num2=b;
+
+            return a+b;
+        }
+
+        const result=add(10,2);
+        console.log("Result: ",result)
+    </script>
+    
+</body>
+</html>
