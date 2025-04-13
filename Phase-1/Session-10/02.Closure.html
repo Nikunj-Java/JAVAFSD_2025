@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        function test(){
+            //parent block
+            if(true){
+                var a= "Hello"; //global variable
+                let b= 1234; //local variable
+                const c="How are you?" //local variable
+            }
+
+            console.log("var:",a)
+            console.log("const:",c)
+            console.log("let:",b)
+
+
+
+        }
+        test();
+    </script>
+    
+</body>
+</html>
