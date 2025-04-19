@@ -16,5 +16,15 @@ Instruction
 	> npm install
 4. to run your project
 	> npm run dev
+
+-----------------------------------------------------------
+
+components:
+- it is Reusable piece of code using that we can structure our application
+- we can set how our application looks like (UI) and how it behaves
+- using components we can breakdown our Bigger UI into small components
+
+
+
 	
 
