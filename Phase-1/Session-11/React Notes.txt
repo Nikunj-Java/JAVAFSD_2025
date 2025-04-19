@@ -25,6 +25,73 @@ components:
 - using components we can breakdown our Bigger UI into small components
 
 
+__________________________________________________________________________________
+
+Installing Bootstrap to React-Application
+-----------------------------------------------------------------------------------
+Step:1	1. Bootstrap---> npm install bootstrap
+	2. React-Bootstrap----> npm install react-bootstrap
+	3. if you want to install both togather
+	> npm install bootstrap react-bootstrap
+Step:2
+	configure Bootstrap
+	>goto> main.jsx
+		add the below lines
+	import 'bootstrap/dist/css/bootstrap.min.css';
+	import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
+	> got to your component and start using Bootstarp
+
+
+
+	get the boostrap ui from getbootstrap.com and use it here
+
+
+Header.jsx
+---------------
+
+
+function Header() {
+    return (
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">SimpliLearn</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+           
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+       
+    </div>
+  </div>
+</nav>
+    );
+}
+
+export default Header;
+
+Save anc check the output
+
+
 
 	
 
