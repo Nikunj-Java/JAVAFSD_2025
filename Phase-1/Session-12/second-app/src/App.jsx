@@ -4,6 +4,7 @@ import Conditional from './components/conditional'
 import Counter from './components/counter'
 import Form from './components/Form'
 import Greeting from './components/greeting'
+import MyButton from './components/MyButton'
 import PropCase from './components/PropeCase'
 import StyleComponent from './components/StyleComponent'
 import Toggle from './components/Toogle'
@@ -13,11 +14,15 @@ import UserInfo from './components/UserInfo'
 function App() {
    
   //object
-
   const user={
     name: 'Nikunj Soni',
     email:'nikunj@gmail.com',
     country:'India'
+  }
+
+  //passing a function as props
+  const handleClick=()=>{
+    alert('Button Clicked');
   }
 
   return (
@@ -40,6 +45,7 @@ function App() {
 
       <UserCards user={user}/>
 
+      <MyButton onClick={handleClick} label="Click Me"></MyButton>
 
      
       <h1>Welcome to React</h1>
