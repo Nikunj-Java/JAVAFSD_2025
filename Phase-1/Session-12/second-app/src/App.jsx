@@ -4,16 +4,27 @@ import Conditional from './components/conditional'
 import Counter from './components/counter'
 import Form from './components/Form'
 import Greeting from './components/greeting'
+import PropCase from './components/PropeCase'
 import StyleComponent from './components/StyleComponent'
 import Toggle from './components/Toogle'
+import UserCards from './components/UserCards'
+import UserInfo from './components/UserInfo'
 
 function App() {
    
+  //object
+
+  const user={
+    name: 'Nikunj Soni',
+    email:'nikunj@gmail.com',
+    country:'India'
+  }
 
   return (
     //JSX---> javascript extension
     //Basic Rendering
     <div>
+
        
       <Conditional/>
       <Action/>
@@ -21,6 +32,15 @@ function App() {
       <Toggle/>
       <Counter/>
       <Form/>
+      <PropCase name="Nikunj Soni"/>
+      <PropCase name="Alice"/>
+
+      <UserInfo name="Jhon" email="jhon@gmail.com"/>
+      <UserInfo name="Bob" email="Bob@gmail.com"/>
+
+      <UserCards user={user}/>
+
+
      
       <h1>Welcome to React</h1>
     </div>
