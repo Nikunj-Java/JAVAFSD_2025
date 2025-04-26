@@ -5,6 +5,7 @@ import './App.css'
 import Counter from './components/counter'
 import WelcomeMessage from './components/welcome'
 import FetchData from './components/FetchData'
+import WindowsWidth from './components/windows'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
   return (
     <div>
       <h1>Welcome to React Application</h1>
+      <WindowsWidth/>
       <Counter/>
       <WelcomeMessage/>
       <FetchData/>
