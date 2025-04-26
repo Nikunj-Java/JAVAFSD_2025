@@ -7,6 +7,7 @@ import WelcomeMessage from './components/welcome'
 import FetchData from './components/FetchData'
 import WindowsWidth from './components/windows'
 import FetchData1 from './components/FetchData1'
+import FormValidation from './components/FormValidation'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +22,7 @@ function App() {
       <WelcomeMessage/>
       <FetchData/>
       <FetchData1/>
+      <FormValidation/>
     </div>
   )
 }
