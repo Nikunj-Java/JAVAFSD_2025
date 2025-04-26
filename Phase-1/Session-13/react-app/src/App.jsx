@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Counter from './components/counter'
 import WelcomeMessage from './components/welcome'
+import FetchData from './components/FetchData'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
       <h1>Welcome to React Application</h1>
       <Counter/>
       <WelcomeMessage/>
+      <FetchData/>
     </div>
   )
 }

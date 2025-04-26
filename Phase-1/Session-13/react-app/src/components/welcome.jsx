@@ -9,7 +9,7 @@ function WelcomeMessage(){
         return()=>{
             console.log('component will unmount');
         }
-    })
+    },[])
     return <h1>Welcome!</h1>
 }
 
