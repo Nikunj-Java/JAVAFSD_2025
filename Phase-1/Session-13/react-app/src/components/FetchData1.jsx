@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
+import axios from 'axios';
 
-function FetchData() {
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users/')
-      .then(response => response.json())
-      .then(data => setData(data));
-  }, []);
+function FetchData1() {
+  
+    const [users,setUsers]=useState([]);
+    useEffect(()=>{
+        axios.get('https://jsonplaceholder.typicode.com/users/')
+        .then(response=>{setUsers(response.data)})
+        .catch(error=>{
+            console.log('Error Loading users:',error);
+        });
+    },[]);
 
 
 
@@ -15,7 +18,7 @@ function FetchData() {
 
   return (
     <div className="container mt-4">
-      {data ? (
+      {users.length>0 ? (
         <table className="table table-striped table-bordered">
           <thead className="table-dark">
             <tr>
@@ -27,7 +30,7 @@ function FetchData() {
             </tr>
           </thead>
           <tbody>
-            {data.map(user => (
+            {users.map(user => (
               <tr key={user.id}>
                 <td>{user.id}</td>
                 <td>{user.name}</td>
@@ -48,4 +51,4 @@ function FetchData() {
   );
 }
 
-export default FetchData;
+export default FetchData1;
