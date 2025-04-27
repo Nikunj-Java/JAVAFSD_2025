@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 
 
@@ -13,6 +14,8 @@ function NavBar() {
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/home">Home</a>
                         </li>
+
+                        <Link></Link>
 
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/fetch">Users</a>

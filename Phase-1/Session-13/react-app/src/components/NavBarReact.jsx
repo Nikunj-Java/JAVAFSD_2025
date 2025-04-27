@@ -16,8 +16,9 @@ function NavBarReact() {
                     <Nav className="me-auto">
                         <Link className='nav-link' to="/home">Home</Link>
                         <Link className='nav-link' to="/fetch">Users</Link>
-                        <Link className='nav-link' to="/welcome">Home</Link>
+                        <Link className='nav-link' to="/home">Home</Link>
                         <Link className='nav-link' to="/form">Form</Link>
+                        <Link className='nav-link' to="/props">props</Link>
 
                     </Nav>
                 </Navbar.Collapse>
