@@ -16,6 +16,7 @@ LOGIN---> CLICK HERE TO MOVE TO LOGIN COMPONENT
 
 TO do thi navigation we need react-router-dom, that we need install additionally in react
 > npm i react-router-dom
+> npm install bootstrap
 
 
 1. create react application
@@ -101,6 +102,8 @@ function App() {
 }
 
 export default App
+
+
 
 
 
