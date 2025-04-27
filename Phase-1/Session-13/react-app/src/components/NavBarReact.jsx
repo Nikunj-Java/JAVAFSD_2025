@@ -20,6 +20,7 @@ function NavBarReact() {
                         <Link className='nav-link' to="/form">Form</Link>
                         <Link className='nav-link' to="/props">props</Link>
                         <Link className='nav-link' to="/context">useContext</Link>
+                        <Link className='nav-link' to="/login">Login</Link>
 
                     </Nav>
                 </Navbar.Collapse>

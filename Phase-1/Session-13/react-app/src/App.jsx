@@ -13,6 +13,7 @@ import NavBar from './components/NavBar'
 import NavBarReact from './components/NavBarReact'
 import GrandParent from './components/propdrilling/GrandParent'
 import MyGrandParent from './components/useContextApi/MyGrandParent'
+import UserInfo from './components/usecase-2/userInfo'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -31,6 +32,7 @@ function App() {
         <Route path='/counter' element={<Counter />}></Route>
         <Route path='/props' element={<GrandParent />}></Route>
         <Route path='/context' element={<MyGrandParent />}></Route>
+        <Route path='/login' element={<UserInfo />}></Route>
       </Routes>
 
     </BrowserRouter>
