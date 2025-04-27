@@ -8,22 +8,27 @@ import FetchData from './components/FetchData'
 import WindowsWidth from './components/windows'
 import FetchData1 from './components/FetchData1'
 import FormValidation from './components/FormValidation'
+import{BrowserRouter,Navigate,Route,Routes} from 'react-router-dom'
+import NavBar from './components/NavBar'
 
 function App() {
   const [count, setCount] = useState(0)
 
   
   return (
-    <div>
-      <h1>Welcome to React Application</h1>
+     <BrowserRouter>
+      
+      <NavBar/>
 
-      <WindowsWidth/>
-      <Counter/>
-      <WelcomeMessage/>
-      <FetchData/>
-      <FetchData1/>
-      <FormValidation/>
-    </div>
+      <Routes>
+          <Route path='/' element={<Navigate to="/home" replace/>}></Route>
+          <Route path='/home' element={<WelcomeMessage/>}></Route>
+          <Route path='/fetch' element={<FetchData/>}></Route>
+          <Route path='/form' element={<FormValidation/>}></Route>
+          <Route path='/counter' element={<Counter/>}></Route>
+      </Routes>
+
+     </BrowserRouter>
   )
 }
 
