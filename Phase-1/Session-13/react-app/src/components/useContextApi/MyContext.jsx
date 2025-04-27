@@ -1,0 +1,19 @@
+import { useContext } from "react";
+import { createContext,useState } from "react";
+
+const MyContext=createContext()
+function MyContextProvider({children}){
+    const [data,setData]=useState('Hello from Grand Parent');
+    return(
+        <MyContext.Provider value={{data,setData}}>
+            {children}
+        </MyContext.Provider>
+    );
+}
+
+
+export default MyContextProvider;
+
+export const useMyContext=()=>{
+    return useContext(MyContext);
+}

@@ -28,6 +28,10 @@ function NavBar() {
                         <li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="/counter">Counter</a>
                         </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/context">useContext</a>
+                        </li>
                          
                     </ul>
 

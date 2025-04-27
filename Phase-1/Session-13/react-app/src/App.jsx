@@ -12,6 +12,7 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import NavBarReact from './components/NavBarReact'
 import GrandParent from './components/propdrilling/GrandParent'
+import MyGrandParent from './components/useContextApi/MyGrandParent'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +30,7 @@ function App() {
         <Route path='/form' element={<FormValidation />}></Route>
         <Route path='/counter' element={<Counter />}></Route>
         <Route path='/props' element={<GrandParent />}></Route>
+        <Route path='/context' element={<MyGrandParent />}></Route>
       </Routes>
 
     </BrowserRouter>
