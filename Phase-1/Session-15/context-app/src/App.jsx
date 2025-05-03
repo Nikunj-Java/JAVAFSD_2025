@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ThemeComponent from './components/ThemeComponent'
 import { ThemeContext } from './context/ThemeContext'
+import UserInfo from './components/UserInfo'
 
 function App() {
    
@@ -18,6 +19,7 @@ function App() {
       
       <button onClick={toggleTheme}>Toggle Theme</button>
       <ThemeComponent/>
+      <UserInfo/>
     </div>
   )
 }
