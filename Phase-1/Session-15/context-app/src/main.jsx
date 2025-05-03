@@ -12,7 +12,7 @@ createRoot(document.getElementById('root')).render(
 
   <ThemeProvider>
     <AuthProvider>
-    <App/>
+        <App/>
     </AuthProvider>
     
   </ThemeProvider>
