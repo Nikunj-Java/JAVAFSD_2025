@@ -7,7 +7,8 @@ import { ThemeContext } from './context/ThemeContext'
 
 function App() {
    
-  const {theme,toogleTheme}=useContext(ThemeContext)
+  const {theme,toggleTheme}=useContext(ThemeContext)
+ 
   return (
     <div>
 
@@ -15,7 +16,7 @@ function App() {
 
       <p>test {theme}</p>
       
-      <button onClick={toogleTheme}>Toggle Theme</button>
+      <button onClick={toggleTheme}>Toggle Theme</button>
       <ThemeComponent/>
     </div>
   )
