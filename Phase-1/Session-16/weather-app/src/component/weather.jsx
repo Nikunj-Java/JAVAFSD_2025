@@ -72,8 +72,23 @@ const Weather =()=>{
                 </div>
 
             </form>
+
+            {state.error&&(<div className='alert alert-danger' role='alert'>{state.error}</div>)}
+            {state.weatherData &&
+            (<div className='card' style={{maxWidth:'22rem'}}>
+                <img src='/public/weather.png'/>
+                <div className='card-body'>
+                    <h5 className='card-title'>{state.weatherData.name},{state.weatherData.sys.country}</h5>
+                    <p className='card-text'>
+                        Temp: {(state.weatherData.main.temp-273.15).toFixed(2)}degree C<br/>
+                            Weather:{state.weatherData.weather[0].description}
+                         </p>
+                </div>
+
+                </div>
+                )}
         </div>
     )
-}
+};
 
 export default Weather;
