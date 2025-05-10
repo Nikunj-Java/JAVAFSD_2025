@@ -1,0 +1,40 @@
+<div class="container bg-secondary text-warning">
+    <h2>Data Binding</h2>
+
+    <p>Using Interpolation: {{name}}</p>
+
+    <h2>Getting Product Details from ts file</h2>
+    <div class="container">
+        <table class="table table-bordered table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Availabilty</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--for can be aaplied using Directives in angular-->
+                <tr *ngFor="let p of products">
+                    <td>{{p.name}}</td>
+                    <td>{{p.price}}</td>
+                    <td>{{p.availabilty}}</td>
+                    <td>{{p.price}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <h3>Event Binding: Use of Boolean And Method from ts file</h3>
+        <button (click)="showDiv()" class="btn btn-success">Show  Div</button>
+
+        <div *ngIf="flag" style="background-color: yellow; color: red;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, voluptatum similique voluptatem harum cum illum, non esse doloribus, possimus ab amet ipsa vel optio repellendus et perferendis vitae voluptate fugit.
+        </div>
+
+    </div>
+
+</div>

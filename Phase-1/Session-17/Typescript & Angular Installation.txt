@@ -85,3 +85,92 @@ goto> style.css file and import bootstrap
 
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+
+3. Binding in Angular
+-----------------------------------------------------------------
+
+Types:
+	1. Source to View (.ts file to .html file)
+	2. View to Source (.html file to .ts file)
+	3. Source to View and View to Source (Two Way Binding)
+
+Types of Data Binding:
+	1. Interpolation
+	2. Property Binding
+	3. Class | style Binding
+	4. event Binding
+
+example-1
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+lets see the binding using Interpolation
+goto> binding.component.ts file
+------------------------------------------
+name:string="Nikunj Soni";
+
+goto> binding.component.html file
+---------------------------------------
+{{name}}
+
+Example-2
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+goto>binding.component.ts file
+---------------------------------
+ products:any=[
+    {name:"pencil",price:20,availability:'10-05-2025',ratings:4.8},
+    {name:"pen",price:30,availability:'09-05-2025',ratings:4.7},
+    {name:"eraser",price:10,availability:'11-05-2025',ratings:4.5},
+    {name:"sharpner",price:25,availability:'12-05-2025',ratings:4.9},
+  ]
+
+goto> binding.component.html file
+-------------------------------------------
+
+ 
+        <table class="table table-bordered table-striped table-dark">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Availabilty</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--for can be aaplied using Directives in angular-->
+                <tr *ngFor="let p of products">
+                    <td>{{p.name}}</td>
+                    <td>{{p.price}}</td>
+                    <td>{{p.availabilty}}</td>
+                    <td>{{p.price}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+
+Example:3
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+binding.component.ts 
+----------------------------------------------------
+flag:boolean=false;
+
+showDiv(){
+  this.flag=!this.flag
+}
+
+
+binding.component.html
+----------------------------------------------------
+
+ <div class="container">
+        <h3>Event Binding: Use of Boolean And Method from ts file</h3>
+        <button (click)="showDiv()" class="btn btn-success">Show  Div</button>
+
+        <div *ngIf="flag" style="background-color: yellow; color: red;">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, voluptatum similique voluptatem harum cum illum, non esse doloribus, possimus ab amet ipsa vel optio repellendus et perferendis vitae voluptate fugit.
+        </div>
+
+    </div>
+
