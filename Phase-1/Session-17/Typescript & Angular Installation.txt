@@ -48,3 +48,31 @@ check the version
 
 check for  the same version(Angular CLI: 16.1.0)
 
+--------------------------------------------------------------------------------------
+CREATING ANGULAR APPLICATION
+--------------------------------------------------------------------------------------
+> ng new <name_of_your_app>
+ Run the app
+> ng serve
+
+
+Generating Component
+------------------------------------------------
+> ng generate component header
+	or
+> ng g c header
+	THIS WILL GENERATE 4 FILE
+	1. header.componet.css             ---- This is CSS File
+	2. header.componet.html	 	   ---- This is HTML File
+	3. header.componet.spec.ts         ---- This is Jasmin Test Case File
+	4. header.componet.ts              ---- This is TypeScriptFile
+now you can goto> header,component.ts file and copy the selector tag and add it to the app.component.html file using <>
+
+app.component.html file
+------------------------
+
+<h1>My First Angular Application</h1>
+
+<app-header></app-header>
+
+save and check the output
