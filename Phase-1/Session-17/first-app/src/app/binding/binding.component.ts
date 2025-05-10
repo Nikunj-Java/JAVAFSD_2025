@@ -21,6 +21,8 @@ showDiv(){
   this.flag=!this.flag
 }
 
+we:number=1000;
+
 
 
 }

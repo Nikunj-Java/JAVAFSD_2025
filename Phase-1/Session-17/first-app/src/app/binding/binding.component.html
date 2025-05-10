@@ -1,7 +1,7 @@
 <div class="container bg-secondary text-warning">
     <h2>Data Binding</h2>
 
-    <p>Using Interpolation: {{name}}</p>
+    <p [class.inStock]="true">Using Interpolation: {{name}}</p>
 
     <h2>Getting Product Details from ts file</h2>
     <div class="container">
@@ -18,7 +18,7 @@
                 <!--for can be aaplied using Directives in angular-->
                 <tr *ngFor="let p of products">
                     <td>{{p.name}}</td>
-                    <td>{{p.price}}</td>
+                    <td [style.font-weight]="we">{{p.price}}</td>
                     <td>{{p.availabilty}}</td>
                     <td>{{p.price}}</td>
 
