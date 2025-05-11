@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="card shadow-sm mt-4" style="width: 100%;">
+        <div class="card-body">
+            <h2 class="card-title">Pipes in Angular</h2>
+            <p class="card-text">pipes are used to decorate angular component and its UI</p>
+            <p> There are twotypes of Pipes</p>
+            <ol>
+                <li>In-Build Pipe</li>
+                <li>Custom Pipe</li>
+            </ol>
+
+
+            <div class="container ">
+                <div class="card shadow-sm mt-4" style="width: 100%;">
+                    <div class="card-body bg-info">
+                        <h2 class="card-title">1. Inbuilt Pipes</h2>
+                        
+                        <p>UPPERCASE: <b>{{name | uppercase}}</b></p>
+
+                         <p>lowercase: <b>{{name | lowercase}}</b></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="card shadow-sm mt-4" style="width: 100%;">
+                    <div class="card-body bg-warning">
+                        <h2 class="card-title">Number Pipes</h2>
+                        
+                        <p>pi: <b>{{pi | number:'5.5-5'}}</b></p>
+                        <p>pi: <b>{{pi | number:'.5-5'}}</b></p>
+                        <p>pi: <b>{{pi | number:'3.3-3'}}</b></p>
+                        <p>pi: <b>{{pi | number:'.10-10'}}</b></p>
+
+                
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container">
+                <div class="card shadow-sm mt-4" style="width: 100%;">
+                    <div class="card-body bg-primary text-warning">
+                        <h2 class="card-title">Currency Pipes</h2>
+                        
+                        <p>a: <b>{{a | currency:'USD':true:'3.3-3'}}</b></p>
+                        <p>a: <b>{{a | currency:'USD':false:'3.3-3'}}</b></p>
+
+                        <p>b: <b>{{b | currency:'EURO':false}}</b></p>
+                        <p>b: <b>{{b | currency:'EURO':true}}</b></p>
+
+                        <p>b: <b>{{b | currency:'RAND':true}}</b></p>
+
+                         <p>a: <b>{{a | currency:'INR':true:'4.4-4'}}</b></p>
+                       
+                
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container">
+                <div class="card shadow-sm mt-4" style="width: 100%;">
+                    <div class="card-body bg-secondary text-warning">
+                        <h2 class="card-title">Date Pipes</h2>
+                        
+                        <p>today: <b>{{today}}</b></p>
+                        <p>today: <b>{{today | date}}</b></p>
+                        <p>today's date in dd/MM/yyyy: <b>{{today | date:'dd/MM/yyyy'}}</b></p>
+                         
+                       
+                
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="container ">
+                <div class="card shadow-sm mt-4" style="width: 100%;">
+                    <div class="card-body bg-info">
+                        <h2 class="card-title">Json Pipes</h2>
+                        
+                        <p>Without Pipe: <b>{{object}}</b></p>
+                        <p>Without Pipe: <b>{{object | json}}</b></p>
+
+                       
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</div>
