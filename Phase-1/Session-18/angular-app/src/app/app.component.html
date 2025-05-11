@@ -1,0 +1,13 @@
+
+
+<div class="container">
+    <h1>Two Way Communication</h1>
+    <h3>Parent Sending Data to Child</h3>
+    <input type="text" (keyup)="0" #pdata>
+</div>
+<div class="container bg-warning">
+    <h3> Value coming from child:</h3><b>{{cdata}}</b>
+
+</div>
+
+<app-child (cevent)="cdata=$event" [pdata]="pdata.value"></app-child>

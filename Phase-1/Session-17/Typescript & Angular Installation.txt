@@ -174,3 +174,35 @@ binding.component.html
 
     </div>
 
+
+Example: 4 Style Binding
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+binding.component.ts
+----------------------------------
+we:number=1000;
+
+binding.component.html
+----------------------------------
+ <td [style.font-weight]="we">{{p.price}}</td>
+
+
+ Example:5 Class Binding
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+ goto> binding.component.css
+
+ -------------------------------------
+
+ .inStock{
+
+    background-color: yellowgreen;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    font-style: italic;
+    color: brown;
+}
+
+
+binding.component.html
+----------------------------------
+

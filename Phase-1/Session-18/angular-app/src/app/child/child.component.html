@@ -1,0 +1,13 @@
+
+
+<div class="container bg-primary">
+    <h2>This is Child Component</h2>
+    <h3>Value coming from Parent: <b>{{pdata}}</b></h3>
+</div>
+
+
+<div class="container">
+    <h3>Sending Data From Child to Parent</h3>
+    <input type="text" #cdata (keyup)="onChange(cdata.value)" />
+</div>
+
