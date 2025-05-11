@@ -7,6 +7,7 @@ import { ChildComponent } from './child/child.component';
 import { PipesComponent } from './pipes/pipes.component';
 import { CustomPipe } from './CustomPipe';
 import { CustomDatePipe } from './CustomDatePipes';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,7 @@ import { CustomDatePipe } from './CustomDatePipes';
     ChildComponent,
     PipesComponent,
     CustomPipe ,   //<--- need to import here
-    CustomDatePipe
+    CustomDatePipe, WeatherComponent
   ],
   imports: [
     BrowserModule,
