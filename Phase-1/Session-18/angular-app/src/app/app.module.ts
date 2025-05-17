@@ -11,6 +11,8 @@ import { WeatherComponent } from './weather/weather.component';
 import { ChildAComponent } from './child-a/child-a.component';
 import { ChildBComponent } from './child-b/child-b.component';
 import { NestedComponent } from './nested/nested.component';
+import { TformComponent } from './tform/tform.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +20,12 @@ import { NestedComponent } from './nested/nested.component';
     ChildComponent,
     PipesComponent,
     CustomPipe ,   //<--- need to import here
-    CustomDatePipe, WeatherComponent, ChildAComponent, ChildBComponent, NestedComponent
+    CustomDatePipe, WeatherComponent, ChildAComponent, ChildBComponent, NestedComponent, TformComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,        //<---- needed for Template Driven Forms
   ],
   providers: [],
   bootstrap: [AppComponent]
