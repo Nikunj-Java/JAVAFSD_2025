@@ -8,31 +8,65 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class RformComponent {
 
-  registerForm:FormGroup;
-  submitted:boolean=false;
-  /* For any compiletime error goto> ts.config.json file and set StrictPropertyInitialization=false */
- 
-  //This is known as Dependency injection
-  constructor(private builder:FormBuilder){}
+  registerForm: FormGroup;
+  submitted = false;
+  users: any[] = [];
 
-  ngOnInit() {
-    this.registerForm=this.builder.group({
-      firstname:['',Validators.required],
-      lastname:['',Validators.required],
-      email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required,Validators.minLength(8)]],
-    })
+  isEditMode = false;
+  editIndex: number = -1;
+
+  constructor(private fb: FormBuilder) {
+    this.registerForm = this.fb.group({
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+    });
   }
 
-  get form(){
+  get form() {
     return this.registerForm.controls;
   }
 
-  onSubmit(){
-    this.submitted=true;
-    if(!this.registerForm.valid)
+  onSubmit() {
+    this.submitted = true;
+
+    if (this.registerForm.invalid) {
       return;
-    alert("Form Submitted")
+    }
+
+    if (this.isEditMode) {
+      // Update existing user
+      this.users[this.editIndex] = this.registerForm.value;
+      this.isEditMode = false;
+      this.editIndex = -1;
+    } else {
+      // Add new user
+      this.users.push(this.registerForm.value);
+    }
+
+    this.registerForm.reset();
+    this.submitted = false;
   }
 
+  editUser(index: number) {
+    this.isEditMode = true;
+    this.editIndex = index;
+    this.registerForm.patchValue(this.users[index]);
+  }
+
+  deleteUser(index: number) {
+    this.users.splice(index, 1);
+
+    if (index === this.editIndex) {
+      this.cancelEdit(); // Clear form if user being edited is deleted
+    }
+  }
+
+  cancelEdit() {
+    this.isEditMode = false;
+    this.editIndex = -1;
+    this.registerForm.reset();
+    this.submitted = false;
+  }
 }

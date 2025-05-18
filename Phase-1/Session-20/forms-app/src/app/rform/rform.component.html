@@ -1,88 +1,81 @@
-<div class="container">
-    <p> To Work with Reactive Forms Module we need to improve Reactiive Forms Module in app.module.ts file</p>
-    <h2 style="background-color: yellowgreen;">2. Model Driven Form Example </h2>
+<div class="container mt-4">
+  <p>To work with Reactive Forms Module, we need to import ReactiveFormsModule in app.module.ts file.</p>
 
-    <div class="row">
-        <div class="col-md-6 offset-3">
-            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <h2 style="background-color: yellowgreen;">2. Model Driven Form Example</h2>
 
-                <!--Firstname-->
-                <div class="form-group">
-                    <label>First Name</label>
-                    <input type="text" formControlName="firstname" class="form-control"
-                    [ngClass]="{'is-invalid': submitted && form['firstname'].errors}">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-                    <!--ngclass is required to add custom validations like error message-->
-                    <!--ERROR MESSAGE-->
-                    <div *ngIf="submitted && form['firstname'].errors" class="invalid-feedback">
-                        First Name Can't be empty
-                    </div>
-                </div>
-
-
-                <!--Firstname-->
-                <div class="form-group">
-                    <label>Last Name</label>
-                    <input type="text" formControlName="lastname" class="form-control"
-                    [ngClass]="{'is-invalid': submitted && form['lastname'].errors}">
-
-                    <!--ngclass is required to add custom validations like error message-->
-                    <!--ERROR MESSAGE-->
-                    <div *ngIf="submitted && form['lastname'].errors" class="invalid-feedback">
-                        Last Name Can't be empty
-                    </div>
-                </div>
-
-
-                <!--Firstname-->
-                <div class="form-group">
-                    <label>email</label>
-                    <input type="email" formControlName="email" class="form-control"
-                    [ngClass]="{'is-invalid': submitted && form['email'].errors}">
-
-                    <!--ngclass is required to add custom validations like error message-->
-                    <!--ERROR MESSAGE-->
-                    <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
-                        <div *ngIf="form['email'].errors['required']">
-                            Email Can't be Empty
-                        </div>
-
-                        <div *ngIf="form['email'].errors['email']">
-                           Invalid Email Id
-                        </div>
-                    </div>
-                </div>
-
-
-
-                <!--Firstname-->
-                <div class="form-group">
-                    <label>Password</label>
-                    <input type="password" formControlName="password" class="form-control"
-                    [ngClass]="{'is-invalid': submitted && form['password'].errors}">
-
-                    <!--ngclass is required to add custom validations like error message-->
-                    <!--ERROR MESSAGE-->
-                    <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
-                        <div *ngIf="form['password'].errors['required']">
-                            Password Can't be Empty
-                        </div>
-
-                        <div *ngIf="form['password'].errors['minLength']">
-                          Password Must Be 8 Character Long
-                        </div>
-                    </div>
-                </div>
-
-                
-
-                
-
-                
-
-                <button type="submit" class="btn btn-primary"> Register</button>
-
-            </form>
+        <!-- Firstname -->
+        <div class="form-group mb-3">
+          <label>First Name</label>
+          <input type="text" formControlName="firstname" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && form['firstname'].errors }">
+          <div *ngIf="submitted && form['firstname'].errors" class="invalid-feedback">
+            First Name can't be empty
+          </div>
         </div>
+
+        <!-- Lastname -->
+        <div class="form-group mb-3">
+          <label>Last Name</label>
+          <input type="text" formControlName="lastname" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && form['lastname'].errors }">
+          <div *ngIf="submitted && form['lastname'].errors" class="invalid-feedback">
+            Last Name can't be empty
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group mb-3">
+          <label>Email</label>
+          <input type="email" formControlName="email" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && form['email'].errors }">
+          <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+            <div *ngIf="form['email'].errors['required']">Email can't be empty</div>
+            <div *ngIf="form['email'].errors['email']">Invalid Email ID</div>
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group mb-3">
+          <label>Password</label>
+          <input type="password" formControlName="password" class="form-control"
+            [ngClass]="{ 'is-invalid': submitted && form['password'].errors }">
+          <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
+            <div *ngIf="form['password'].errors['required']">Password can't be empty</div>
+            <div *ngIf="form['password'].errors['minlength']">Password must be at least 8 characters</div>
+          </div>
+        </div>
+
+        <!-- Submit and Cancel buttons -->
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-primary">
+            {{ isEditMode ? 'Update' : 'Register' }}
+          </button>
+          <button *ngIf="isEditMode" type="button" class="btn btn-secondary" (click)="cancelEdit()">
+            Cancel
+          </button>
+        </div>
+      </form>
     </div>
+  </div>
+
+  <!-- Display Submitted Users -->
+  <div class="row mt-5" *ngIf="users.length > 0">
+    <div class="col-md-6 offset-md-3">
+      <h4>Submitted Users:</h4>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center"
+          *ngFor="let user of users; let i = index">
+          {{ user.firstname }} {{ user.lastname }} - {{ user.email }}
+          <div>
+            <button class="btn btn-warning btn-sm me-2" (click)="editUser(i)">Edit</button>
+            <button class="btn btn-danger btn-sm" (click)="deleteUser(i)">Delete</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
