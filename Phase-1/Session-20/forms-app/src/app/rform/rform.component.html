@@ -1,0 +1,88 @@
+<div class="container">
+    <p> To Work with Reactive Forms Module we need to improve Reactiive Forms Module in app.module.ts file</p>
+    <h2 style="background-color: yellowgreen;">2. Model Driven Form Example </h2>
+
+    <div class="row">
+        <div class="col-md-6 offset-3">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+                <!--Firstname-->
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" formControlName="firstname" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && form['firstname'].errors}">
+
+                    <!--ngclass is required to add custom validations like error message-->
+                    <!--ERROR MESSAGE-->
+                    <div *ngIf="submitted && form['firstname'].errors" class="invalid-feedback">
+                        First Name Can't be empty
+                    </div>
+                </div>
+
+
+                <!--Firstname-->
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" formControlName="lastname" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && form['lastname'].errors}">
+
+                    <!--ngclass is required to add custom validations like error message-->
+                    <!--ERROR MESSAGE-->
+                    <div *ngIf="submitted && form['lastname'].errors" class="invalid-feedback">
+                        Last Name Can't be empty
+                    </div>
+                </div>
+
+
+                <!--Firstname-->
+                <div class="form-group">
+                    <label>email</label>
+                    <input type="email" formControlName="email" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && form['email'].errors}">
+
+                    <!--ngclass is required to add custom validations like error message-->
+                    <!--ERROR MESSAGE-->
+                    <div *ngIf="submitted && form['email'].errors" class="invalid-feedback">
+                        <div *ngIf="form['email'].errors['required']">
+                            Email Can't be Empty
+                        </div>
+
+                        <div *ngIf="form['email'].errors['email']">
+                           Invalid Email Id
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!--Firstname-->
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" class="form-control"
+                    [ngClass]="{'is-invalid': submitted && form['password'].errors}">
+
+                    <!--ngclass is required to add custom validations like error message-->
+                    <!--ERROR MESSAGE-->
+                    <div *ngIf="submitted && form['password'].errors" class="invalid-feedback">
+                        <div *ngIf="form['password'].errors['required']">
+                            Password Can't be Empty
+                        </div>
+
+                        <div *ngIf="form['password'].errors['minLength']">
+                          Password Must Be 8 Character Long
+                        </div>
+                    </div>
+                </div>
+
+                
+
+                
+
+                
+
+                <button type="submit" class="btn btn-primary"> Register</button>
+
+            </form>
+        </div>
+    </div>
+</div>
